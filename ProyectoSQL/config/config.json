@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "CTPI2024*",
+    "database": "adopcion_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "CTPI2024*",
+    "database": "adopcion_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "CTPI2024*",
+    "database": "adopcion_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
