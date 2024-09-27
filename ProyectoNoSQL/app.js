@@ -1,11 +1,15 @@
 const express = require("express");
 const app = express();
 const autoR = require('./routes/autoRoutes')
+const clienteR = require('./routes/clienteRoutes')
+const alquileresR = require('./routes/alquileresRoutes')
 require('dotenv').config();
 const conectDB = require('./config/db')
 app.use(express.json())
 
 app.use('/api', autoR);
+app.use('/api', clienteR);
+app.use('/api', alquileresR);
 
 conectDB().then(() => {
     const port = process.env.PORT || 4000;

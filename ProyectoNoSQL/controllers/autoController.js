@@ -1,4 +1,4 @@
-const {Auto} = require('../models/autoModel');
+const {Auto} = require('../models/alquilerModel');
 
 const crearAuto = async (req, res) => {
     try {
@@ -31,9 +31,14 @@ const actualizarAuto = async (req, res) => {
 const eliminarAuto = async (req, res) => {
     try {
         const {id} = req.params;
-        await Auto.findByIdAndDelete(id);
+        let autoEliminado = await Auto.findByIdAndDelete(id);
+        if (!autoEliminado) {
+            res.json({message: "Auto no encontrado"})
+        } else {
+            res.json({message: "Auto eliminado"})
+        }
     } catch (e) {
-        res.json({message: "Error"});
+        res.json({message: "Error"})
     }
-}
+};
 module.exports = {crearAuto, verAutos, actualizarAuto, eliminarAuto};
